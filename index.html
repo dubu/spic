@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spick · Discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="title">Spick Discovery</span>
+      </div>
+      <div class="subtitle">인기 글을 한 번에</div>
+    </header>
+
+    <main>
+      <section id="feed" class="feed" aria-live="polite"></section>
+      <section id="empty" class="empty hidden">
+        최신 소식을 불러오지 못했어요. 잠시 후 다시 시도해주세요.
+      </section>
+    </main>
+
+    <template id="card-template">
+      <article class="card">
+        <a class="card-link" target="_blank" rel="noopener noreferrer">
+          <div class="thumb">
+            <img loading="lazy" alt="" />
+          </div>
+          <div class="content">
+            <div class="pill"></div>
+            <h2 class="title"></h2>
+            <p class="desc"></p>
+            <div class="meta"></div>
+          </div>
+        </a>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
