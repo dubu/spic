@@ -4,7 +4,7 @@ const template = document.querySelector("#card-template");
 
 async function loadFeed() {
   try {
-    const res = await fetch("./data/xxx.json", { cache: "no-cache" });
+    const res = await fetch("./xxx.json", { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const items = await res.json();
     render(items);
