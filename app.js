@@ -1,6 +1,8 @@
 const feedEl = document.querySelector("#feed");
 const emptyEl = document.querySelector("#empty");
-const template = document.querySelectorAll('script[type="text/template"]');
+const template = document.querySelector(
+  'script[type="text/template"]'
+);
 
 // Parse script template to create element
 function createNodeFromTemplate() {
