@@ -2,6 +2,13 @@ const feedEl = document.querySelector("#feed");
 const emptyEl = document.querySelector("#empty");
 const template = document.querySelector("#card-template");
 
+// Parse script template to create element
+function createNodeFromTemplate() {
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = template.innerHTML.trim();
+  return tempDiv.firstElementChild.cloneNode(true);
+}
+
 async function loadFeed() {
   try {
     const res = await fetch("https://dubu.github.io/spic/xxx.json", { cache: "no-cache" });
@@ -24,7 +31,7 @@ function render(items) {
 
   const fragment = document.createDocumentFragment();
   for (const item of items) {
-    const node = template.content.cloneNode(true);
+    const node = createNodeFromTemplate();
     const link = node.querySelector(".card-link");
     const img = node.querySelector("img");
     const title = node.querySelector(".title");
